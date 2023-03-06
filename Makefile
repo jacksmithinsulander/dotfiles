@@ -12,3 +12,4 @@ installnix:
 
 init:
 	$(LNDIR) $(PWD)/vis $(HOME)/.config/vis
+	$(LN) $(PWD).xinitrc $(HOME)/.xinitrc
