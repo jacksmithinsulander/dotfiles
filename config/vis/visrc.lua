@@ -15,3 +15,4 @@ vis.events.subscribe(vis.events.WIN_OPEN, function(win)
 	vis:command('set colorcolumn 80')
 end)
 
+vis:map(vis.modes.NORMAL, ':G', ':!./test.sh')
