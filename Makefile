@@ -6,9 +6,9 @@ LNDIR = ln -vs
 
 #installguix:
 	
-installpkgsrc:
+#installpkgsrc:
 
-installnix:
+#installnix:
 
 init:
 	$(LNDIR) $(PWD)/vis $(HOME)/.config/vis
