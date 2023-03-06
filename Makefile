@@ -12,4 +12,6 @@ installnix:
 
 init:
 	$(LNDIR) $(PWD)/vis $(HOME)/.config/vis
+	$(LN) $(PWD)/scripts/bgsel $(SCRIPTS)/bgsel
 	$(LN) $(PWD).xinitrc $(HOME)/.xinitrc
+	
