@@ -46,6 +46,7 @@
 
   # Enable fwupd.
   services.fwupd.enable = true;
+  system.autoUpgrade.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
@@ -57,26 +58,26 @@
   console.keyMap = "sv-latin1";
 
   # Enable CUPS to print documents.
-  services.printing.enable = true;
+  #services.printing.enable = true;
+
+  nix.settings.auto-optimise-store = true;
 
   programs.fish.enable = true;
 
-  # Enable sound with pipewire.
-  sound.enable = true;
-  hardware.pulseaudio.enable = false; #just changed this one
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
+# Enable sound with pipewire.
+    sound.enable = true;
+    hardware.pulseaudio.enable = false;
+    hardware.opengl.enable = true;
+    security.rtkit.enable = true;
+  
+    services.pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;                                                                                                                                                                                 
+      pulse.enable = true;
+      jack.enable = true;
   };
+  
   #hardware.fancontrol.enable = true;
   hardware.nvidia.open = true;
   hardware.cpu.intel.updateMicrocode = true;
@@ -128,6 +129,7 @@
 
       #CREATIVE
       gimp
+      blender
 
       #ORG
       evolution
@@ -183,15 +185,14 @@
 
   ];
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
+  environment.variables = {
+    DSSI_PATH   = "$HOME/.dssi:$HOME/.nix-profile/lib/dssi:/run/current-system/sw/lib/dssi";
+    LADSPA_PATH = "$HOME/.ladspa:$HOME/.nix-profile/lib/ladspa:/run/current-system/sw/lib/ladspa";
+    LV2_PATH    = "$HOME/.lv2:$HOME/.nix-profile/lib/lv2:/run/current-system/sw/lib/lv2";
+    LXVST_PATH  = "$HOME/.lxvst:$HOME/.nix-profile/lib/lxvst:/run/current-system/sw/lib/lxvst";
+    VST_PATH    = "$HOME/.vst:$HOME/.nix-profile/lib/vst:/run/current-system/sw/lib/vst";
+    VST3_PATH   = "$HOME/.vst3:$HOME/.nix-profile/lib/vst3:/run/current-system/sw/lib/vst3";
+  };
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
@@ -200,7 +201,7 @@
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  networking.firewall.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
