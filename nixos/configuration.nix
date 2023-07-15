@@ -13,10 +13,11 @@
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "unabomber"; # Define your hostname.
 
   # Enable networking
   networking.networkmanager.enable = true;
+  
 
   # Set your time zone.
   time.timeZone = "Europe/Stockholm";
@@ -77,8 +78,12 @@
     #media-session.enable = true;
   };
   #hardware.fancontrol.enable = true;
-  #hardware.nvidia.open = true;
+  hardware.nvidia.open = true;
   hardware.cpu.intel.updateMicrocode = true;
+
+  services.gvfs.enable = true;
+
+  hardware.bluetooth.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -90,7 +95,42 @@
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.fish;
     packages = with pkgs; [
-      firefox
+      #BROWSERS
+      firefox #REMOVE THIS SHITTY BROWSER 
+      ungoogled-chromium
+      librewolf
+      brave
+      tor #Might remove this one as well since brave have onion routing, else remove brave
+
+      #VPN
+      mullvad-vpn
+
+      #MUSIC MAKING
+      ardour
+      drumgizmo
+      zynaddsubfx
+      carla
+      zrythm
+      bespokesynth
+      sonic-pi
+      puredata
+
+      #CHATT
+      tdesktop
+      discord
+      teams
+
+      #MUSIC
+      spotify
+
+      #PASSWORDMANAGER
+      keepassxc
+
+      #CREATIVE
+      gimp
+
+      #ORG
+      evolution
     ];
   };
 
@@ -102,54 +142,45 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    #TEXT EDITORS
     (vis.overrideAttrs (old: {patches = [./patches/vis/communicate.patch];}))
+    emacs
+    wily
+    helix
+
+    #FONTS
+    mononoki
+
+    #PROG
+    python311
+    nodejs_20
+    lua
+    gcc
+    rustup
+    nil
+    lua-language-server
+    python311Packages.python-lsp-server
+    #(pkgs.callPackage /home/ted/prog/nixpkgs/pkgs/development/interpreters/zenroom/default.nix {})
+ 
+    #TOOLS
     wget
     curl
-    gimp
-    librewolf
-    ardour
-    drumgizmo
-    zynaddsubfx
-    ungoogled-chromium
-    keepassxc
-    evolution
     imagemagick
-    teams
-    pkgs.discord
-    tdesktop
-    puredata
-    pkgs.tor
-    pkgs.mullvad-vpn
-    pkgs.mononoki
     sqlite
     sent
     plan9port
-    spotify
-    emacs
-    python311
     git
-    pkgs.nodejs_20
     neofetch
     htop
     zip
     unzip
+    virtualenv
+    gnumake
+
+    #TERM AND SHELL
     kitty
-    brave
-    sonic-pi
-    wily
-    pkgs.virtualenv
-    pkgs.lua
-    pkgs.fish
-    pkgs.rustup
-    gcc
-    pkgs.nil
-    pkgs.lua-language-server
-    pkgs.python311Packages.python-lsp-server
-    helix
-    pkgs.zrythm
-    carla
-    bespokesynth
-    #(pkgs.callPackage /home/ted/prog/nixpkgs/pkgs/development/interpreters/zenroom/default.nix {})
+    fish
+
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -163,7 +194,7 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
