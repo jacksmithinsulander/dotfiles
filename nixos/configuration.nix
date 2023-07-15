@@ -106,16 +106,6 @@
       #VPN
       mullvad-vpn
 
-      #MUSIC MAKING
-      ardour
-      drumgizmo
-      zynaddsubfx
-      carla
-      zrythm
-      bespokesynth
-      sonic-pi
-      puredata
-
       #CHATT
       tdesktop
       discord
@@ -183,7 +173,18 @@
     kitty
     fish
 
+    #MUSIC MAKING
+    ardour
+    drumgizmo
+    zynaddsubfx
+    carla
+    zrythm
+    bespokesynth
+    sonic-pi
+    puredata
   ];
+
+  #TODO, SET THESE ENVIRONMENT VARIABLES AND THE MUSIC MAKING STUFF TO USER INSTEAD OF ROOT
 
   environment.variables = {
     DSSI_PATH   = "$HOME/.dssi:$HOME/.nix-profile/lib/dssi:/run/current-system/sw/lib/dssi";
