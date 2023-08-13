@@ -1,4 +1,3 @@
-
 { config, pkgs, ... }:
 
 {
@@ -9,15 +8,18 @@
     ];
 
   # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
-  boot.loader.grub.useOSProber = true;
+  boot = {
+    loader = {
+      grub.enable = true;
+      grub.device = "/dev/sda";
+      grub.useOSProber = true;
+    };
+  };
 
   networking.hostName = "unabomber"; # Define your hostname.
 
   # Enable networking
-  networking.networkmanager.enable = true;
-  
+  networking.networkmanager.enable = true;  
 
   # Set your time zone.
   time.timeZone = "Europe/Stockholm";
@@ -48,6 +50,18 @@
   services.fwupd.enable = true;
   system.autoUpgrade.enable = true;
 
+  # Enable automatic pruning of generations older than 30 days
+  nix.gc.automatic = true;
+  nix.gc.options = "--delete-older-than 30d";
+
+  # Generate caches for `apropos`, `whatis`, etc.
+  documentation.man.generateCaches = true;
+
+  # Set shell aliases for all users
+  environment.shellAliases = {
+    ll = "ls -l";
+  };
+
   # Configure keymap in X11
   services.xserver = {
     layout = "se";
@@ -64,20 +78,20 @@
 
   programs.fish.enable = true;
 
-# Enable sound with pipewire.
-    sound.enable = true;
-    hardware.pulseaudio.enable = false;
-    hardware.opengl.enable = true;
-    security.rtkit.enable = true;
+  # Enable sound with pipewire.
+  sound.enable = true;
+  hardware.pulseaudio.enable = false;
+  hardware.opengl.enable = true;
+  security.rtkit.enable = true;
   
-    services.pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;                                                                                                                                                                                 
-      pulse.enable = true;
-      jack.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;                                                                                                                                                                                 
+    pulse.enable = true;
+    jack.enable = true;
   };
-  
+    
   #hardware.fancontrol.enable = true;
   hardware.nvidia.open = true;
   hardware.cpu.intel.updateMicrocode = true;
@@ -120,9 +134,14 @@
       #CREATIVE
       gimp
       blender
-
+      
       #ORG
       evolution
+
+      #SINS
+      lutris
+      heroic
+      vulkan-tools
     ];
   };
 
@@ -182,6 +201,31 @@
     bespokesynth
     sonic-pi
     puredata
+    cardinal
+    calf
+    tunefish
+    airwindows-lv2
+    odin2
+    helm
+    vcv-rack
+    boops
+    distrho
+    lsp-plugins
+    surge-XT
+    surge
+    ninjas2
+    carla
+    artyFX
+    fmsynth
+    fverb
+    metersLv2
+    zam-plugins
+    molot-lite
+    vocproc
+
+    #AUDIO
+    pipewire_0_2
+    qjackctl
   ];
 
   #TODO, SET THESE ENVIRONMENT VARIABLES AND THE MUSIC MAKING STUFF TO USER INSTEAD OF ROOT
@@ -194,6 +238,9 @@
     VST_PATH    = "$HOME/.vst:$HOME/.nix-profile/lib/vst:/run/current-system/sw/lib/vst";
     VST3_PATH   = "$HOME/.vst3:$HOME/.nix-profile/lib/vst3:/run/current-system/sw/lib/vst3";
   };
+
+  programs.steam.enable = true;
+  hardware.steam-hardware.enable = true;
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
