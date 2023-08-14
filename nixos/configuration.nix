@@ -134,6 +134,7 @@
       #CREATIVE
       gimp
       blender
+      obs-studio
       
       #ORG
       evolution
@@ -158,6 +159,7 @@
     emacs
     wily
     helix
+    vscodium
 
     #FONTS
     mononoki
