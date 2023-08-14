@@ -109,11 +109,10 @@
     shell = pkgs.fish;
     packages = with pkgs; [
       #BROWSERS
-      firefox #REMOVE THIS SHITTY BROWSER 
+      firefox
       ungoogled-chromium
-      librewolf
       brave
-      tor #Might remove this one as well since brave have onion routing, else remove brave
+      tor 
 
       #VPN
       mullvad-vpn
@@ -147,8 +146,6 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
     #TEXT EDITORS
     (vis.overrideAttrs (old: {patches = [./patches/vis/communicate.patch];}))
@@ -245,7 +242,5 @@
   };
 
   programs.steam.enable = true;
-
-
-  system.stateVersion = "22.11"; # Did you read the comment?
+  system.stateVersion = "22.11"; 
 }
