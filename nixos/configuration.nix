@@ -16,10 +16,11 @@
     };
   };
 
-  networking.hostName = "unabomber"; # Define your hostname.
-
-  # Enable networking
-  networking.networkmanager.enable = true;  
+  networking = {
+    hostName = "unabomber"; # Define your hostname.
+    networkmanager.enable = true;  
+    firewall.enable = true;
+  };
 
   # Set your time zone.
   time.timeZone = "Europe/Stockholm";
@@ -39,20 +40,33 @@
     LC_TIME = "sv_SE.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the KDE Plasma Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
-
-  # Enable fwupd.
-  services.fwupd.enable = true;
+  services = {
+    # Enable the X11 windowing system.
+    xserver.enable = true;
+    xserver = {
+      # Enable the KDE Plasma Desktop Environment.
+      displayManager.sddm.enable = true;
+      desktopManager.plasma5.enable = true;
+      # Configure keymap in X11
+      layout = "se";
+      xkbVariant = "";
+    };
+    # Enable fwupd.
+    fwupd.enable = true;
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;                                                                                                                                                                                 
+      pulse.enable = true;
+      jack.enable = true;
+    };    
+    gvfs.enable = true;
+    mullvad-vpn.enable = true;
+    # Enable the OpenSSH daemon.
+    openssh.enable = true;
+  };
+  
   system.autoUpgrade.enable = true;
-
-  # Enable automatic pruning of generations older than 30 days
-  nix.gc.automatic = true;
-  nix.gc.options = "--delete-older-than 30d";
 
   # Generate caches for `apropos`, `whatis`, etc.
   documentation.man.generateCaches = true;
@@ -62,47 +76,31 @@
     ll = "ls -l";
   };
 
-  # Configure keymap in X11
-  services.xserver = {
-    layout = "se";
-    xkbVariant = "";
-  };
-
   # Configure console keymap
   console.keyMap = "sv-latin1";
 
-  # Enable CUPS to print documents.
-  #services.printing.enable = true;
-
-  nix.settings.auto-optimise-store = true;
-
+  nix = {
+    settings.auto-optimise-store = true;
+    # Enable automatic pruning of generations older than 30 days
+    gc.automatic = true;
+    gc.options = "--delete-older-than 30d";
+  };
+ 
   programs.fish.enable = true;
 
+  security.rtkit.enable = true;
   # Enable sound with pipewire.
   sound.enable = true;
-  hardware.pulseaudio.enable = false;
-  hardware.opengl.enable = true;
-  security.rtkit.enable = true;
   
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;                                                                                                                                                                                 
-    pulse.enable = true;
-    jack.enable = true;
+  hardware = { 
+    pulseaudio.enable = false;
+    opengl.enable = true;
+    nvidia.open = true;
+    cpu.intel.updateMicrocode = true;
+    bluetooth.enable = true;
+    steam-hardware.enable = true;
   };
-    
-  #hardware.fancontrol.enable = true;
-  hardware.nvidia.open = true;
-  hardware.cpu.intel.updateMicrocode = true;
-
-  services.gvfs.enable = true;
-
-  hardware.bluetooth.enable = true;
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
+  
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ted = {
     isNormalUser = true;
@@ -148,8 +146,6 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  services.mullvad-vpn.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -249,12 +245,7 @@
   };
 
   programs.steam.enable = true;
-  hardware.steam-hardware.enable = true;
 
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-
-  networking.firewall.enable = true;
 
   system.stateVersion = "22.11"; # Did you read the comment?
 }
