@@ -177,6 +177,9 @@
     nil
     lua-language-server
     python311Packages.python-lsp-server
+    mypy
+    luajitPackages.lua-lsp
+    luajitPackages.luarocks-nix
     #(pkgs.callPackage /home/ted/prog/nixpkgs/pkgs/development/interpreters/zenroom/default.nix {})
  
     #TOOLS
