@@ -110,6 +110,8 @@
     cpu.intel.updateMicrocode = true;
     bluetooth.enable = true;
     steam-hardware.enable = true;
+    # ENable closed source firmware
+    enableRedistributableFirmware = true;
   };
   
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -171,7 +173,7 @@
     #PROG
     python311
     nodejs_20
-    lua
+    (lua.withPackages(ps: with ps; [ http ]))
     gcc
     rustup
     nil
