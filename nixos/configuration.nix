@@ -85,6 +85,7 @@
     konsole
     plasma-browser-integration
     print-manager
+    dolphin
   ];
 
   # Configure console keymap
@@ -148,6 +149,7 @@
       
       #ORG
       evolution
+      spaceFM
 
       #SINS
       lutris
@@ -183,6 +185,7 @@
     luajitPackages.lua-lsp
     luajitPackages.luarocks-nix
     #(pkgs.callPackage /home/ted/prog/nixpkgs/pkgs/development/interpreters/zenroom/default.nix {})
+    postman
  
     #TOOLS
     wget
