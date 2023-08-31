@@ -86,7 +86,10 @@
     plasma-browser-integration
     print-manager
     dolphin
+    dolphin-plugins
   ];
+
+  services.xserver.excludePackages = [ pkgs.xterm ];
 
   # Configure console keymap
   console.keyMap = "sv-latin1";
