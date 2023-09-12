@@ -87,6 +87,7 @@
     print-manager
     dolphin
     dolphin-plugins
+    kwallet
   ];
 
   services.xserver.excludePackages = [ pkgs.xterm ];
@@ -102,6 +103,8 @@
   };
  
   programs.fish.enable = true;
+
+  programs.spacefm.enable = true;
 
   security.rtkit.enable = true;
   # Enable sound with pipewire.
@@ -153,6 +156,8 @@
       #ORG
       evolution
       spaceFM
+      liferea
+      claws-mail
 
       #SINS
       lutris
