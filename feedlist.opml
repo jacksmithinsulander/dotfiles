@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<opml version="1.0">
+  <head>
+    <title>Liferea Feed List Export</title>
+  </head>
+  <body>
+    <outline title="Feeds" text="Feeds" description="Feeds" type="folder">
+      <outline title="Finance" text="Finance" description="Finance" type="folder">
+        <outline title="TradFi" text="TradFi" description="TradFi" type="folder">
+          <outline title="TA" text="TA" description="TA" type="folder"/>
+          <outline title="Quant" text="Quant" description="Quant" type="folder"/>
+        </outline>
+        <outline title="Crypto" text="Crypto" description="Crypto" type="folder">
+          <outline title="Dev" text="Dev" description="Dev" type="folder">
+            <outline title="Blogs" text="Blogs" description="Blogs" type="folder">
+              <outline title="Vitalik Buterin's website" text="Vitalik Buterin's website" description="Vitalik Buterin's website" type="rss" xmlUrl="https://vitalik.ca/feed.xml" htmlUrl="https://vitalik.ca/"/>
+            </outline>
+            <outline title="Reddit" text="Reddit" description="Reddit" type="folder">
+              <outline title="solidity" text="solidity" description="solidity" type="atom" xmlUrl="https://www.reddit.com/r/solidity/.rss" htmlUrl="https://www.reddit.com/r/solidity/"/>
+              <outline title="Ethereum Development and DApps" text="Ethereum Development and DApps" description="Ethereum Development and DApps" type="atom" xmlUrl="https://www.reddit.com/r/ethdev/.rss" htmlUrl="https://www.reddit.com/r/ethdev/"/>
+              <outline title="ethdevjobs" text="ethdevjobs" description="ethdevjobs" type="atom" xmlUrl="https://www.reddit.com/r/ethdevjobs/.rss" htmlUrl="https://www.reddit.com/r/ethdevjobs/"/>
+              <outline title="Blockchain development" text="Blockchain development" description="Blockchain development" type="atom" xmlUrl="https://www.reddit.com/r/blockchaindeveloper/.rss" htmlUrl="https://www.reddit.com/r/blockchaindeveloper/"/>
+              <outline title="A place to discuss blockchain programming" text="A place to discuss blockchain programming" description="A place to discuss blockchain programming" type="atom" xmlUrl="https://www.reddit.com/r/blockchainprogramming/.rss" htmlUrl="https://www.reddit.com/r/blockchainprogramming/"/>
+            </outline>
+            <outline title="Youtube" text="Youtube" description="Youtube" type="folder">
+              <outline title="Dapp University" text="Dapp University" description="Dapp University" type="atom" xmlUrl="https://yewtu.be/feed/channel/UCY0xL8V6NzzFcwzHCgB8orQ" htmlUrl="https://yewtu.be/channel/UCY0xL8V6NzzFcwzHCgB8orQ"/>
+              <outline title="EatTheBlocks" text="EatTheBlocks" description="EatTheBlocks" type="atom" xmlUrl="https://yewtu.be/feed/channel/UCZM8XQjNOyG2ElPpEUtNasA" htmlUrl="https://yewtu.be/channel/UCZM8XQjNOyG2ElPpEUtNasA"/>
+              <outline title="Patrick Collins" text="Patrick Collins" description="Patrick Collins" type="atom" xmlUrl="https://yewtu.be/feed/channel/UCn-3f8tw_E1jZvhuHatROwA" htmlUrl="https://yewtu.be/channel/UCn-3f8tw_E1jZvhuHatROwA"/>
+              <outline title="Moon Dev" text="Moon Dev" description="Moon Dev" type="atom" xmlUrl="https://yewtu.be/feed/channel/UCN7D80fY9xMYu5mHhUhXEFw" htmlUrl="https://yewtu.be/channel/UCN7D80fY9xMYu5mHhUhXEFw"/>
+            </outline>
+          </outline>
+          <outline title="Serious" text="Serious" description="Serious" type="folder">
+            <outline title="Twitter" text="Twitter" description="Twitter" type="folder">
+              <outline title="PermanentGains / @PermaGGG" text="PermanentGains / @PermaGGG" description="PermanentGains / @PermaGGG" type="rss" xmlUrl="https://nitter.cz/PermaGGG/rss" htmlUrl="https://nitter.cz/PermaGGG"/>
+              <outline title="Heiro (in my goblin era) / @HeiroCapital" text="Heiro (in my goblin era) / @HeiroCapital" description="Heiro (in my goblin era) / @HeiroCapital" type="rss" xmlUrl="https://nitter.cz/HeiroCapital/rss" htmlUrl="https://nitter.cz/HeiroCapital"/>
+              <outline title="ganymede / @ganymede_0x" text="ganymede / @ganymede_0x" description="ganymede / @ganymede_0x" type="rss" xmlUrl="https://nitter.cz/ganymede_0x/rss" htmlUrl="https://nitter.cz/ganymede_0x"/>
+              <outline title="wudavide (🤌🏼, ☕️, 🇮🇹) / @WuDavide7" text="wudavide (🤌🏼, ☕️, 🇮🇹) / @WuDavide7" description="wudavide (🤌🏼, ☕️, 🇮🇹) / @WuDavide7" type="rss" xmlUrl="https://nitter.cz/WuDavide7/rss" htmlUrl="https://nitter.cz/WuDavide7"/>
+              <outline title="Gudbidd / @Gudbidd" text="Gudbidd / @Gudbidd" description="Gudbidd / @Gudbidd" type="rss" xmlUrl="https://nitter.cz/Gudbidd/rss" htmlUrl="https://nitter.cz/Gudbidd"/>
+              <outline title="modest / @modestfrfr" text="modest / @modestfrfr" description="modest / @modestfrfr" type="rss" xmlUrl="https://nitter.cz/modestfrfr/rss" htmlUrl="https://nitter.cz/modestfrfr"/>
+              <outline title="davis 🐺🦊 / @basedkarbon" text="davis 🐺🦊 / @basedkarbon" description="davis 🐺🦊 / @basedkarbon" type="rss" xmlUrl="https://nitter.cz/basedkarbon/rss" htmlUrl="https://nitter.cz/basedkarbon"/>
+              <outline title="Burgerflipper / @trmachine888" text="Burgerflipper / @trmachine888" description="Burgerflipper / @trmachine888" type="rss" xmlUrl="https://nitter.cz/trmachine888/rss" htmlUrl="https://nitter.cz/trmachine888"/>
+              <outline title="Danzzo / @Danzzo10" text="Danzzo / @Danzzo10" description="Danzzo / @Danzzo10" type="rss" xmlUrl="https://nitter.cz/Danzzo10/rss" htmlUrl="https://nitter.cz/Danzzo10"/>
+              <outline title="ChiefingZa / @chiefingza" text="ChiefingZa / @chiefingza" description="ChiefingZa / @chiefingza" type="rss" xmlUrl="https://nitter.cz/chiefingza/rss" htmlUrl="https://nitter.cz/chiefingza"/>
+              <outline title="Cryp__toad / @Cryp__toad" text="Cryp__toad / @Cryp__toad" description="Cryp__toad / @Cryp__toad" type="rss" xmlUrl="https://nitter.cz/Cryp__toad/rss" htmlUrl="https://nitter.cz/Cryp__toad"/>
+              <outline title="Res / @resdegen" text="Res / @resdegen" description="Res / @resdegen" type="rss" xmlUrl="https://nitter.cz/resdegen/rss" htmlUrl="https://nitter.cz/resdegen"/>
+            </outline>
+          </outline>
+          <outline title="Degenerate" text="Degenerate" description="Degenerate" type="folder">
+            <outline title="Other" text="Other" description="Other" type="folder">
+              <outline title="/biz/ - Business &amp; Finance" text="/biz/ - Business &amp; Finance" description="/biz/ - Business &amp; Finance" type="rss" xmlUrl="https://boards.4channel.org/biz/index.rss" htmlUrl="http://boards.4chan.org/biz/./"/>
+            </outline>
+            <outline title="Twitter" text="Twitter" description="Twitter" type="folder">
+              <outline title="Kaduna / @CryptoKaduna" text="Kaduna / @CryptoKaduna" description="Kaduna / @CryptoKaduna" type="rss" xmlUrl="https://nitter.cz/CryptoKaduna/rss" htmlUrl="https://nitter.cz/CryptoKaduna"/>
+              <outline title="Ser Govanisher / @Govanisher" text="Ser Govanisher / @Govanisher" description="Ser Govanisher / @Govanisher" type="rss" xmlUrl="https://nitter.cz/Govanisher/rss" htmlUrl="https://nitter.cz/Govanisher"/>
+              <outline title="8020 / @0x8020" text="8020 / @0x8020" description="8020 / @0x8020" type="rss" xmlUrl="https://nitter.cz/0x8020/rss" htmlUrl="https://nitter.cz/0x8020"/>
+              <outline title="𝕽𝖔𝖒𝖊𝖔 🦇🔊 / @RomeoTrades" text="𝕽𝖔𝖒𝖊𝖔 🦇🔊 / @RomeoTrades" description="𝕽𝖔𝖒𝖊𝖔 🦇🔊 / @RomeoTrades" type="rss" xmlUrl="https://nitter.cz/RomeoTrades/rss" htmlUrl="https://nitter.cz/RomeoTrades"/>
+              <outline title="Unihax0r~ / @0xUnihax0r" text="Unihax0r~ / @0xUnihax0r" description="Unihax0r~ / @0xUnihax0r" type="rss" xmlUrl="https://nitter.cz/0xUnihax0r/rss" htmlUrl="https://nitter.cz/0xUnihax0r"/>
+              <outline title="0x6851 / @0x6851" text="0x6851 / @0x6851" description="0x6851 / @0x6851" type="rss" xmlUrl="https://nitter.cz/0x6851/rss" htmlUrl="https://nitter.cz/0x6851"/>
+              <outline title="18decimals / @18decimals" text="18decimals / @18decimals" description="18decimals / @18decimals" type="rss" xmlUrl="https://nitter.cz/18decimals/rss" htmlUrl="https://nitter.cz/18decimals"/>
+              <outline title="0xNoFace / @0xNoFacex0" text="0xNoFace / @0xNoFacex0" description="0xNoFace / @0xNoFacex0" type="rss" xmlUrl="https://nitter.cz/0xNoFacex0/rss" htmlUrl="https://nitter.cz/0xNoFacex0"/>
+              <outline title="Fedi 🚬 / @ooloo" text="Fedi 🚬 / @ooloo" description="Fedi 🚬 / @ooloo" type="rss" xmlUrl="https://nitter.cz/ooloo/rss" htmlUrl="https://nitter.cz/ooloo"/>
+              <outline title="Gumby 🖨 / @100xGumby" text="Gumby 🖨 / @100xGumby" description="Gumby 🖨 / @100xGumby" type="rss" xmlUrl="https://nitter.cz/100xGumby/rss" htmlUrl="https://nitter.cz/100xGumby"/>
+              <outline title="bull market genius / @bull_genius" text="bull market genius / @bull_genius" description="bull market genius / @bull_genius" type="rss" xmlUrl="https://nitter.cz/bull_genius/rss" htmlUrl="https://nitter.cz/bull_genius"/>
+              <outline title="Kamino / @KaminoCrypto" text="Kamino / @KaminoCrypto" description="Kamino / @KaminoCrypto" type="rss" xmlUrl="https://nitter.cz/KaminoCrypto/rss" htmlUrl="https://nitter.cz/KaminoCrypto"/>
+              <outline title="Crypto Hunter / @CryptoxHunter" text="Crypto Hunter / @CryptoxHunter" description="Crypto Hunter / @CryptoxHunter" type="rss" xmlUrl="https://nitter.cz/CryptoxHunter/rss" htmlUrl="https://nitter.cz/CryptoxHunter"/>
+              <outline title="BRYPTO👨🏽‍🦽👨🏽‍🦽 / @bryptokenneth3" text="BRYPTO👨🏽‍🦽👨🏽‍🦽 / @bryptokenneth3" description="BRYPTO👨🏽‍🦽👨🏽‍🦽 / @bryptokenneth3" type="rss" xmlUrl="https://nitter.cz/bryptokenneth3/rss" htmlUrl="https://nitter.cz/bryptokenneth3"/>
+              <outline title="Rancune / @Rancune_eth" text="Rancune / @Rancune_eth" description="Rancune / @Rancune_eth" type="rss" xmlUrl="https://nitter.cz/Rancune_eth/rss" htmlUrl="https://nitter.cz/Rancune_eth"/>
+              <outline title="Caff / @ChadCaff" text="Caff / @ChadCaff" description="Caff / @ChadCaff" type="rss" xmlUrl="https://nitter.cz/ChadCaff/rss" htmlUrl="https://nitter.cz/ChadCaff"/>
+              <outline title="Crypto Andrew ✍️🧠 / @Crypt0_Andrew" text="Crypto Andrew ✍️🧠 / @Crypt0_Andrew" description="Crypto Andrew ✍️🧠 / @Crypt0_Andrew" type="rss" xmlUrl="https://nitter.cz/Crypt0_Andrew/rss" htmlUrl="https://nitter.cz/Crypt0_Andrew"/>
+              <outline title="Nino / @orderflowing" text="Nino / @orderflowing" description="Nino / @orderflowing" type="rss" xmlUrl="https://nitter.cz/orderflowing/rss" htmlUrl="https://nitter.cz/orderflowing"/>
+              <outline title="Inside0x / @Inside0x" text="Inside0x / @Inside0x" description="Inside0x / @Inside0x" type="rss" xmlUrl="https://nitter.cz/Inside0x/rss" htmlUrl="https://nitter.cz/Inside0x"/>
+              <outline title="ZheBrigadier / @ZheBrigadier" text="ZheBrigadier / @ZheBrigadier" description="ZheBrigadier / @ZheBrigadier" type="rss" xmlUrl="https://nitter.cz/ZheBrigadier/rss" htmlUrl="https://nitter.cz/ZheBrigadier"/>
+              <outline title="Premature-Accumulator-Neill(🌸, 🌿)🐐🛸.fuel / @MetaverseRanger" text="Premature-Accumulator-Neill(🌸, 🌿)🐐🛸.fuel / @MetaverseRanger" description="Premature-Accumulator-Neill(🌸, 🌿)🐐🛸.fuel / @MetaverseRanger" type="rss" xmlUrl="https://nitter.cz/MetaverseRanger/rss" htmlUrl="https://nitter.cz/MetaverseRanger"/>
+              <outline title="Small Cap Scientist 👨‍🔬🧪🥼 / @SmallCapScience" text="Small Cap Scientist 👨‍🔬🧪🥼 / @SmallCapScience" description="Small Cap Scientist 👨‍🔬🧪🥼 / @SmallCapScience" type="rss" xmlUrl="https://nitter.cz/SmallCapScience/rss" htmlUrl="https://nitter.cz/SmallCapScience"/>
+              <outline title="Indy / @IndianaAltzz" text="Indy / @IndianaAltzz" description="Indy / @IndianaAltzz" type="rss" xmlUrl="https://nitter.cz/IndianaAltzz/rss" htmlUrl="https://nitter.cz/IndianaAltzz"/>
+              <outline title="€ｕｒｏＳｎｉｐｅｒ / @TheEuroSniper" text="€ｕｒｏＳｎｉｐｅｒ / @TheEuroSniper" description="€ｕｒｏＳｎｉｐｅｒ / @TheEuroSniper" type="rss" xmlUrl="https://nitter.cz/TheEuroSniper/rss" htmlUrl="https://nitter.cz/TheEuroSniper"/>
+              <outline title="Fren0x / @Fren0x" text="Fren0x / @Fren0x" description="Fren0x / @Fren0x" type="rss" xmlUrl="https://nitter.cz/Fren0x/rss" htmlUrl="https://nitter.cz/Fren0x"/>
+              <outline title="Tnut / @Teeznutz11" text="Tnut / @Teeznutz11" description="Tnut / @Teeznutz11" type="rss" xmlUrl="https://nitter.cz/Teeznutz11/rss" htmlUrl="https://nitter.cz/Teeznutz11"/>
+              <outline title="Rational APE (FT 3,3) / @Rationalape1" text="Rational APE (FT 3,3) / @Rationalape1" description="Rational APE (FT 3,3) / @Rationalape1" type="rss" xmlUrl="https://nitter.cz/Rationalape1/rss" htmlUrl="https://nitter.cz/Rationalape1"/>
+              <outline title="📿 / @Glug69420" text="📿 / @Glug69420" description="📿 / @Glug69420" type="rss" xmlUrl="https://nitter.cz/Glug69420/rss" htmlUrl="https://nitter.cz/Glug69420"/>
+              <outline title="z / @zolandinho" text="z / @zolandinho" description="z / @zolandinho" type="rss" xmlUrl="https://nitter.cz/zolandinho/rss" htmlUrl="https://nitter.cz/zolandinho"/>
+              <outline title="crypto - popseye (papovic) 🛸 🏠 🍄 / @crypto_popseye" text="crypto - popseye (papovic) 🛸 🏠 🍄 / @crypto_popseye" description="crypto - popseye (papovic) 🛸 🏠 🍄 / @crypto_popseye" type="rss" xmlUrl="https://nitter.cz/crypto_popseye/rss" htmlUrl="https://nitter.cz/crypto_popseye"/>
+              <outline title="cevo / @cryptocevo" text="cevo / @cryptocevo" description="cevo / @cryptocevo" type="rss" xmlUrl="https://nitter.cz/cryptocevo/rss" htmlUrl="https://nitter.cz/cryptocevo"/>
+              <outline title="Eric Cryptoman / @EricCryptoman" text="Eric Cryptoman / @EricCryptoman" description="Eric Cryptoman / @EricCryptoman" type="rss" xmlUrl="https://nitter.cz/EricCryptoman/rss" htmlUrl="https://nitter.cz/EricCryptoman"/>
+              <outline title="illiquidLizard | 🦎 / @LiquidLizard_" text="illiquidLizard | 🦎 / @LiquidLizard_" description="illiquidLizard | 🦎 / @LiquidLizard_" type="rss" xmlUrl="https://nitter.cz/LiquidLizard_/rss" htmlUrl="https://nitter.cz/LiquidLizard_"/>
+              <outline title="STILL K.A.P.O / @KAPOTHEGOAT01" text="STILL K.A.P.O / @KAPOTHEGOAT01" description="STILL K.A.P.O / @KAPOTHEGOAT01" type="rss" xmlUrl="https://nitter.cz/KAPOTHEGOAT01/rss" htmlUrl="https://nitter.cz/KAPOTHEGOAT01"/>
+              <outline title="ProjectW / @fitforcrypto_" text="ProjectW / @fitforcrypto_" description="ProjectW / @fitforcrypto_" type="rss" xmlUrl="https://nitter.cz/fitforcrypto_/rss" htmlUrl="https://nitter.cz/fitforcrypto_"/>
+              <outline title="🇦🇺🌌 Čhenž_Ťradeš 🌌🇦🇺 / @V2Chenz" text="🇦🇺🌌 Čhenž_Ťradeš 🌌🇦🇺 / @V2Chenz" description="🇦🇺🌌 Čhenž_Ťradeš 🌌🇦🇺 / @V2Chenz" type="rss" xmlUrl="https://nitter.cz/V2Chenz/rss" htmlUrl="https://nitter.cz/V2Chenz"/>
+              <outline title="bitjul / @bitjul" text="bitjul / @bitjul" description="bitjul / @bitjul" type="rss" xmlUrl="https://nitter.cz/bitjul/rss" htmlUrl="https://nitter.cz/bitjul"/>
+              <outline title="doc 🉐 / @jkrdoc" text="doc 🉐 / @jkrdoc" description="doc 🉐 / @jkrdoc" type="rss" xmlUrl="https://nitter.cz/jkrdoc/rss" htmlUrl="https://nitter.cz/jkrdoc"/>
+              <outline title="Lukas 盧克 / @lukasOXS" text="Lukas 盧克 / @lukasOXS" description="Lukas 盧克 / @lukasOXS" type="rss" xmlUrl="https://nitter.cz/lukasOXS/rss" htmlUrl="https://nitter.cz/lukasOXS"/>
+              <outline title="👀 / @UniswapVillain" text="👀 / @UniswapVillain" description="👀 / @UniswapVillain" type="rss" xmlUrl="https://nitter.cz/UniswapVillain/rss" htmlUrl="https://nitter.cz/UniswapVillain"/>
+              <outline title="TYSON / @TysonThe2nd" text="TYSON / @TysonThe2nd" description="TYSON / @TysonThe2nd" type="rss" xmlUrl="https://nitter.cz/TysonThe2nd/rss" htmlUrl="https://nitter.cz/TysonThe2nd"/>
+            </outline>
+          </outline>
+        </outline>
+      </outline>
+      <outline title="Fun" text="Fun" description="Fun" type="folder">
+        <outline title="Music" text="Music" description="Music" type="folder"/>
+        <outline title="Fashion" text="Fashion" description="Fashion" type="folder"/>
+        <outline title="Tattoo" text="Tattoo" description="Tattoo" type="folder"/>
+        <outline title="Watches" text="Watches" description="Watches" type="folder">
+          <outline title="Youtube" text="Youtube" description="Youtube" type="folder">
+            <outline title="Nico Leonard" text="Nico Leonard" description="Nico Leonard" type="atom" xmlUrl="https://yewtu.be/feed/channel/UCXPXfAAo-yV6Y-0PZecwBLw" htmlUrl="https://yewtu.be/channel/UCXPXfAAo-yV6Y-0PZecwBLw"/>
+            <outline title="Watchfinder &amp; Co." text="Watchfinder &amp; Co." description="Watchfinder &amp; Co." type="atom" xmlUrl="https://yewtu.be/feed/channel/UCLaoR2K7Dsa_KUK-DVpdZZA" htmlUrl="https://yewtu.be/channel/UCLaoR2K7Dsa_KUK-DVpdZZA"/>
+            <outline title="Illuminating Watches" text="Illuminating Watches" description="Illuminating Watches" type="atom" xmlUrl="https://yewtu.be/feed/channel/UCMwNdfn7FtpFwQJcqJsuW8w" htmlUrl="https://yewtu.be/channel/UCMwNdfn7FtpFwQJcqJsuW8w"/>
+            <outline title="Teddy Baldassarre" text="Teddy Baldassarre" description="Teddy Baldassarre" type="atom" xmlUrl="https://yewtu.be/feed/channel/UCLGp7H4XuzA9TLJ0L4PUx8w" htmlUrl="https://yewtu.be/channel/UCLGp7H4XuzA9TLJ0L4PUx8w"/>
+            <outline title="Federico Talks Watches" text="Federico Talks Watches" description="Federico Talks Watches" type="atom" xmlUrl="https://yewtu.be/feed/channel/UCH27JDu8g6tPDIjDikVGPog" htmlUrl="https://yewtu.be/channel/UCH27JDu8g6tPDIjDikVGPog"/>
+          </outline>
+        </outline>
+        <outline title="Luxury" text="Luxury" description="Luxury" type="folder">
+          <outline title="Youtube" text="Youtube" description="Youtube" type="folder">
+            <outline title="ProducerMichael" text="ProducerMichael" description="ProducerMichael" type="atom" xmlUrl="https://yewtu.be/feed/channel/UCP0ok1nSEenuz-e_ulNAJjg" htmlUrl="https://yewtu.be/channel/UCP0ok1nSEenuz-e_ulNAJjg"/>
+            <outline title="Enes Yilmazer" text="Enes Yilmazer" description="Enes Yilmazer" type="atom" xmlUrl="https://yewtu.be/feed/channel/UCHWbZM3BIGgZksvXegx_h3w" htmlUrl="https://yewtu.be/channel/UCHWbZM3BIGgZksvXegx_h3w"/>
+          </outline>
+        </outline>
+      </outline>
+      <outline title="Tech" text="Tech" description="Tech" type="folder">
+        <outline title="Dev" text="Dev" description="Dev" type="folder">
+          <outline title="Blogs" text="Blogs" description="Blogs" type="folder">
+            <outline title="Xah Programing Blog" text="Xah Programing Blog" description="Xah Programing Blog" type="atom" xmlUrl="http://xahlee.info/comp/blog.xml" htmlUrl="http://xahlee.info/comp/blog.html"/>
+          </outline>
+        </outline>
+        <outline title="Privacy" text="Privacy" description="Privacy" type="folder">
+          <outline title="Blogs" text="Blogs" description="Blogs" type="folder">
+            <outline title="Dig Deeper" text="Dig Deeper" description="Dig Deeper" type="atom" xmlUrl="https://digdeeper.club/atom.xml" htmlUrl=""/>
+          </outline>
+        </outline>
+        <outline title="Linux" text="Linux" description="Linux" type="folder"/>
+        <outline title="AI" text="AI" description="AI" type="folder"/>
+        <outline title="Consooom" text="Consooom" description="Consooom" type="folder"/>
+        <outline title="News" text="News" description="News" type="folder">
+          <outline title="Hacker News" text="Hacker News" description="Hacker News" type="rss" xmlUrl="https://news.ycombinator.com/rss" htmlUrl="https://news.ycombinator.com/"/>
+          <outline title="Lobsters" text="Lobsters" description="Lobsters" type="rss" xmlUrl="https://lobste.rs/rss" htmlUrl="https://lobste.rs/"/>
+          <outline title="Hackaday" text="Hackaday" description="Hackaday" type="rss" xmlUrl="https://hackaday.com/feed/" htmlUrl="https://hackaday.com"/>
+          <outline title="Hacker Noon" text="Hacker Noon" description="Hacker Noon" type="rss" xmlUrl="https://hackernoon.com/feed" htmlUrl="https://hackernoon.com"/>
+          <outline title="/g/ - Technology" text="/g/ - Technology" description="/g/ - Technology" type="rss" xmlUrl="https://boards.4channel.org/g/index.rss" htmlUrl="http://boards.4chan.org/g/./"/>
+          <outline title="the singularity is nearer" text="the singularity is nearer" description="the singularity is nearer" type="atom" xmlUrl="https://geohot.github.io//blog/feed.xml" htmlUrl="https://geohot.github.io//blog/"/>
+        </outline>
+      </outline>
+    </outline>
+    <outline title="Feeds inverted" text="Feeds inverted" description="Feeds inverted" type="folder"/>
+  </body>
+</opml>
