@@ -255,6 +255,8 @@
     pipewire
     qpwgraph
     cadence
+    jack2
+    qjackctl
   ];
 
   programs.git = {
