@@ -85,9 +85,6 @@
     konsole
     plasma-browser-integration
     print-manager
-    dolphin
-    dolphin-plugins
-    kwallet
   ];
 
   services.xserver.excludePackages = [ pkgs.xterm ];
@@ -141,6 +138,7 @@
       tdesktop
       discord
       teams
+      gtkcord4
 
       #MUSIC
       spotify
@@ -158,6 +156,7 @@
       spaceFM
       liferea
       claws-mail
+      obsidian
 
       #SINS
       lutris
@@ -249,6 +248,9 @@
     #AUDIO
     pipewire_0_2
     qjackctl
+    jack1
+    jack2
+    cadence
   ];
 
   programs.git = {
