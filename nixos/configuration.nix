@@ -241,7 +241,6 @@
     surge-XT
     surge
     ninjas2
-    carla
     artyFX
     fmsynth
     fverb
@@ -250,12 +249,11 @@
     molot-lite
     vocproc
     guitarix
+    gxplugins-lv2
 
     #AUDIO
-    pipewire_0_2
-    qjackctl
-    jack1
-    jack2
+    pipewire
+    qpwgraph
     cadence
   ];
 
