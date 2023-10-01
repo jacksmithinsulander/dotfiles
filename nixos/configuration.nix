@@ -145,6 +145,7 @@
       discord
       teams
       gtkcord4
+      slack
 
       #MUSIC
       spotify
@@ -250,6 +251,7 @@
     vocproc
     guitarix
     gxplugins-lv2
+    geonkick
 
     #AUDIO
     pipewire
