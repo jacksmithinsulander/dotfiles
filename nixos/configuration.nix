@@ -45,9 +45,11 @@
     # Enable the X11 windowing system.
     xserver.enable = true;
     xserver = {
-      # Enable the KDE Plasma Desktop Environment.
-      displayManager.sddm.enable = true;
-      desktopManager.plasma5.enable = true;
+      # Enable the GNOME Desktop Environment.
+      #displayManager.sddm.enable = true;
+      #desktopManager.plasma5.enable = true;
+      displayManager.gdm.enable = true;
+      desktopManager.gnome.enable = true;
       # Configure keymap in X11
       layout = "se";
       xkbVariant = "";
@@ -82,16 +84,36 @@
     kernel.realtime = true;
   };
 
-  environment.plasma5.excludePackages = with pkgs.libsForQt5; [
-    elisa
-    gwenview
-    okular
-    oxygen
-    khelpcenter
-    konsole
-    plasma-browser-integration
-    print-manager
-  ];
+  # environment.plasma5.excludePackages = with pkgs.libsForQt5; [
+  #   elisa
+  #   gwenview
+  #   okular
+  #   oxygen
+  #   khelpcenter
+  #   konsole
+  #   plasma-browser-integration
+  #   print-manager
+  # ];
+
+  environment.gnome.excludePackages = (with pkgs; [
+    gnome-photos
+    gnome-tour
+  ]) ++ (with pkgs.gnome; [
+    cheese # webcam tool
+    gnome-music
+    gnome-terminal
+    gedit # text editor
+    epiphany # web browser
+    geary # email reader
+    evince # document viewer
+    gnome-characters
+    totem # video player
+    tali # poker game
+    iagno # go game
+    hitori # sudoku game
+    atomix # puzzle game
+  ]);
+
 
   services.xserver.excludePackages = [ pkgs.xterm ];
 
@@ -143,8 +165,7 @@
       #CHATT
       tdesktop
       discord
-      teams
-      gtkcord4
+      #teams
       slack
 
       #MUSIC
@@ -215,6 +236,7 @@
     unzip
     virtualenv
     gnumake
+    gnome.gnome-tweaks
 
     #TERM AND SHELL
     kitty
@@ -280,4 +302,5 @@
 
   programs.steam.enable = true;
   system.stateVersion = "22.11"; 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }
