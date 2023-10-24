@@ -45,11 +45,9 @@
     # Enable the X11 windowing system.
     xserver.enable = true;
     xserver = {
-      # Enable the GNOME Desktop Environment.
-      #displayManager.sddm.enable = true;
-      #desktopManager.plasma5.enable = true;
-      displayManager.gdm.enable = true;
-      desktopManager.gnome.enable = true;
+      # Enable the Plasma Desktop Environment.
+      displayManager.sddm.enable = true;
+      desktopManager.plasma5.enable = true;
       # Configure keymap in X11
       layout = "se";
       xkbVariant = "";
@@ -76,6 +74,7 @@
 
   # Set shell aliases for all users
   environment.shellAliases = {
+    ls = "exa";
     ll = "ls -l";
   };
 
@@ -84,36 +83,16 @@
     kernel.realtime = true;
   };
 
-  # environment.plasma5.excludePackages = with pkgs.libsForQt5; [
-  #   elisa
-  #   gwenview
-  #   okular
-  #   oxygen
-  #   khelpcenter
-  #   konsole
-  #   plasma-browser-integration
-  #   print-manager
-  # ];
-
-  environment.gnome.excludePackages = (with pkgs; [
-    gnome-photos
-    gnome-tour
-  ]) ++ (with pkgs.gnome; [
-    cheese # webcam tool
-    gnome-music
-    gnome-terminal
-    gedit # text editor
-    epiphany # web browser
-    geary # email reader
-    evince # document viewer
-    gnome-characters
-    totem # video player
-    tali # poker game
-    iagno # go game
-    hitori # sudoku game
-    atomix # puzzle game
-  ]);
-
+  environment.plasma5.excludePackages = with pkgs.libsForQt5; [
+    elisa
+    gwenview
+    okular
+    oxygen
+    khelpcenter
+    konsole
+    plasma-browser-integration
+    print-manager
+  ];
 
   services.xserver.excludePackages = [ pkgs.xterm ];
 
@@ -165,7 +144,7 @@
       #CHATT
       tdesktop
       discord
-      #teams
+      teams
       slack
 
       #MUSIC
@@ -209,6 +188,7 @@
 
     #PROG
     python311
+    pypy3
     nodejs_20
     (lua.withPackages(ps: with ps; [ http ]))
     gcc
@@ -219,8 +199,8 @@
     mypy
     luajitPackages.lua-lsp
     luajitPackages.luarocks-nix
+    (python311.withPackages(ps: with ps; [ pip pandas matplotlib numpy pypytools ]))
     #(pkgs.callPackage /home/ted/prog/nixpkgs/pkgs/development/interpreters/zenroom/default.nix {})
-    postman
  
     #TOOLS
     wget
@@ -236,7 +216,7 @@
     unzip
     virtualenv
     gnumake
-    gnome.gnome-tweaks
+    exa
 
     #TERM AND SHELL
     kitty
@@ -290,6 +270,10 @@
       user.name="jacksmithinsulander";
     };
   };
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "teams-1.5.00.23861"
+  ];
 
 #  environment.variables = {
 #    DSSI_PATH   = "$HOME/.dssi:$HOME/.nix-profile/lib/dssi:/run/current-system/sw/lib/dssi";
