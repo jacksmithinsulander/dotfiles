@@ -129,7 +129,7 @@
   users.users.ted = {
     isNormalUser = true;
     description = "Theodore Kaczynski";
-    extraGroups = [ "networkmanager" "wheel" "audio"];
+    extraGroups = [ "networkmanager" "wheel" "audio" "docker"];
     shell = pkgs.fish;
     packages = with pkgs; [
       #BROWSERS
@@ -172,6 +172,8 @@
     ];
   };
 
+  users.extraGroups.docker.members = ["ted"];
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -201,6 +203,7 @@
     luajitPackages.luarocks-nix
     (python311.withPackages(ps: with ps; [ pip pandas matplotlib numpy pypytools ]))
     #(pkgs.callPackage /home/ted/prog/nixpkgs/pkgs/development/interpreters/zenroom/default.nix {})
+    docker
  
     #TOOLS
     wget
@@ -254,6 +257,7 @@
     guitarix
     gxplugins-lv2
     geonkick
+    schismtracker
 
     #AUDIO
     pipewire
@@ -273,7 +277,14 @@
 
   nixpkgs.config.permittedInsecurePackages = [
     "teams-1.5.00.23861"
+    "electron-24.8.6"
   ];
+
+  virtualisation.docker.enable = true;
+  virtualisation.docker.rootless = { 
+    enable = true;
+    setSocketVariable = true;
+  };
 
 #  environment.variables = {
 #    DSSI_PATH   = "$HOME/.dssi:$HOME/.nix-profile/lib/dssi:/run/current-system/sw/lib/dssi";
