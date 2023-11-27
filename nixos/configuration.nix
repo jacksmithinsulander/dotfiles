@@ -74,7 +74,7 @@
 
   # Set shell aliases for all users
   environment.shellAliases = {
-    ls = "exa";
+    ls = "eza";
     ll = "ls -l";
   };
 
@@ -144,7 +144,7 @@
       #CHATT
       tdesktop
       discord
-      teams
+      #teams
       slack
 
       #MUSIC
@@ -190,7 +190,7 @@
 
     #PROG
     python311
-    pypy3
+    #pypy3
     nodejs_20
     (lua.withPackages(ps: with ps; [ http ]))
     gcc
@@ -219,7 +219,7 @@
     unzip
     virtualenv
     gnumake
-    exa
+    eza
 
     #TERM AND SHELL
     kitty
@@ -262,7 +262,7 @@
     #AUDIO
     pipewire
     qpwgraph
-    cadence
+    #cadence
     jack2
     qjackctl
   ];
