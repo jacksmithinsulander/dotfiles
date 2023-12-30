@@ -100,7 +100,14 @@
   console.keyMap = "sv-latin1";
 
   nix = {
-    settings.auto-optimise-store = true;
+    settings = { 
+      auto-optimise-store = true;
+      experimental-features = [ "nix-command" "flakes" ];
+    };
+    package = pkgs.nixFlakes;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
     # Enable automatic pruning of generations older than 30 days
     gc.automatic = true;
     gc.options = "--delete-older-than 30d";
@@ -136,7 +143,8 @@
       firefox
       ungoogled-chromium
       brave
-      tor 
+      tor
+      vivaldi
 
       #VPN
       mullvad-vpn
@@ -157,6 +165,8 @@
       gimp
       blender
       obs-studio
+      mpv
+      kdenlive
       
       #ORG
       evolution
@@ -195,6 +205,7 @@
     (lua.withPackages(ps: with ps; [ http ]))
     gcc
     rustup
+    #rustc
     nil
     lua-language-server
     python311Packages.python-lsp-server
@@ -204,6 +215,8 @@
     (python311.withPackages(ps: with ps; [ pip pandas matplotlib numpy pypytools ]))
     #(pkgs.callPackage /home/ted/prog/nixpkgs/pkgs/development/interpreters/zenroom/default.nix {})
     docker
+    solc
+    nodePackages.typescript-language-server
  
     #TOOLS
     wget
@@ -220,6 +233,7 @@
     virtualenv
     gnumake
     eza
+    lf
 
     #TERM AND SHELL
     kitty
@@ -278,6 +292,7 @@
   nixpkgs.config.permittedInsecurePackages = [
     "teams-1.5.00.23861"
     "electron-24.8.6"
+    "electron-25.9.0"
   ];
 
   virtualisation.docker.enable = true;
@@ -297,5 +312,4 @@
 
   programs.steam.enable = true;
   system.stateVersion = "22.11"; 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }
