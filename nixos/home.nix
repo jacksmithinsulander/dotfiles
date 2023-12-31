@@ -67,9 +67,28 @@
   #  /etc/profiles/per-user/ted/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    #EDITOR = "helix";
   };
 
+  programs.kitty.enable = true;
+  programs.kitty.settings = {
+    # Font settings
+    bold_font = "mononoki Bold";
+    italic_font = "mononoki Italic";
+    bold_italic_font = "mononoki Bold Italic";
+
+    # Tab settings
+    tab_bar_edge = "top";
+    tab_bar_style = "slant";
+    active_tab_foreground = "#fdf6e3";
+    active_tab_background = "#268bd2";
+    inactive_tab_foreground = "#073642";
+    inactive_tab_background = "#eee8d5";
+  };
+
+  programs.kitty.theme = "Solarized Light";
+  programs.kitty.font.name = "mononoki";
+  
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
