@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+    ./kitty.nix
+    ./helix.nix
+  ];
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "ted";
@@ -67,49 +72,9 @@
   #  /etc/profiles/per-user/ted/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    #EDITOR = "helix";
+    EDITOR = "helix";
   };
 
-  # KITTY
-  programs.kitty.enable = true;
-  programs.kitty.settings = {
-    # Font settings
-    bold_font = "mononoki Bold";
-    italic_font = "mononoki Italic";
-    bold_italic_font = "mononoki Bold Italic";
-
-    # Tab settings
-    tab_bar_edge = "top";
-    tab_bar_style = "slant";
-    active_tab_foreground = "#fdf6e3";
-    active_tab_background = "#268bd2";
-    inactive_tab_foreground = "#073642";
-    inactive_tab_background = "#eee8d5";
-  };
-
-  programs.kitty.theme = "Solarized Light";
-  programs.kitty.font.name = "mononoki";
-
-  # HELIX
-  programs.helix.enable = true;
-  programs.helix.settings = {
-    theme = "solarized_light";
-    editor = {
-      line-number = "relative";
-      mouse = false;
-      rulers = [80];
-      lsp.display-messages = true;
-    };
-    editor.cursor-shape = {
-      insert = "bar";
-    };
-    keys.normal = {
-      esc = ["collapse_selection" "keep_primary_selection"];
-      A-up = ["extend_to_line_bounds" "delete_selection" "move_line_up" "paste_before"];
-      A-down = ["extend_to_line_bounds" "delete_selection" "paste_after"];
-    };
-  };
-  
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
