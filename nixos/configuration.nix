@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports =
@@ -51,6 +51,10 @@
       # Configure keymap in X11
       layout = "se";
       xkbVariant = "";
+    };
+    mysql = {
+      enable = true;
+      package = pkgs.mysql80;
     };
     # Enable fwupd.
     fwupd.enable = true;
@@ -167,6 +171,7 @@
       obs-studio
       mpv
       kdenlive
+      libreoffice-qt
       
       #ORG
       evolution
@@ -200,16 +205,18 @@
 
     #PROG
     python311
-    #pypy3
     nodejs_20
     (lua.withPackages(ps: with ps; [ http ]))
     gcc
     rustup
-    #rustc
+    rust-analyzer-unwrapped    
+    lldb
     nil
     lua-language-server
     python311Packages.python-lsp-server
+    python311Packages.pytest
     mypy
+    editorconfig-checker
     luajitPackages.lua-lsp
     luajitPackages.luarocks-nix
     (python311.withPackages(ps: with ps; [ pip pandas matplotlib numpy pypytools ]))
@@ -217,6 +224,8 @@
     docker
     solc
     nodePackages.typescript-language-server
+    mysql80  
+    evcxr
  
     #TOOLS
     wget
@@ -244,7 +253,6 @@
     drumgizmo
     zynaddsubfx
     carla
-    zrythm
     bespokesynth
     sonic-pi
     puredata
@@ -276,7 +284,6 @@
     #AUDIO
     pipewire
     qpwgraph
-    #cadence
     jack2
     qjackctl
   ];
