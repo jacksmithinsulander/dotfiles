@@ -202,6 +202,7 @@
 
     #FONTS
     mononoki
+    victor-mono
 
     #PROG
     python311
@@ -235,6 +236,7 @@
     sent
     plan9port
     git
+    jujutsu
     neofetch
     htop
     zip

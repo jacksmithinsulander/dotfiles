@@ -4,9 +4,11 @@
     enable = true;
     settings = {
       # Font settings
-      bold_font = "mononoki Bold";
-      italic_font = "mononoki Italic";
-      bold_italic_font = "mononoki Bold Italic";
+      # bold_font = "mononoki Bold";
+      bold_font = "hack Bold";
+      italic_font = "victor-mono Italic";
+      bold_italic_font = "victor-mono Bold Italic";
+      font_family = "mononoki Regular";
 
       # Tab settings
       tab_bar_edge = "top";
