@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, inputs, ... }:
 
 {
   imports =
@@ -119,7 +119,8 @@
  
   programs.fish.enable = true;
 
-  programs.spacefm.enable = true;
+  programs.hyprland.enable = true;
+  programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
 
   security.rtkit.enable = true;
   # Enable sound with pipewire.
@@ -132,7 +133,7 @@
     cpu.intel.updateMicrocode = true;
     bluetooth.enable = true;
     steam-hardware.enable = true;
-    # ENable closed source firmware
+    # Enable closed source firmware
     enableRedistributableFirmware = true;
   };
   
