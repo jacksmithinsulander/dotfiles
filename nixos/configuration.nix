@@ -148,7 +148,6 @@
       firefox
       ungoogled-chromium
       brave
-      tor
       vivaldi
 
       #VPN
@@ -157,7 +156,6 @@
       #CHATT
       tdesktop
       discord
-      #teams
       slack
 
       #MUSIC
@@ -175,8 +173,6 @@
       libreoffice-qt
       
       #ORG
-      evolution
-      spaceFM
       liferea
       claws-mail
       obsidian
@@ -196,8 +192,6 @@
   environment.systemPackages = with pkgs; [
     #TEXT EDITORS
     (vis.overrideAttrs (old: {patches = [./patches/vis/communicate.patch];}))
-    emacs
-    wily
     helix
     vscodium
 
@@ -212,28 +206,18 @@
     gcc
     rustup
     rust-analyzer-unwrapped    
-    lldb
-    nil
-    lua-language-server
     python311Packages.python-lsp-server
     python311Packages.pytest
     mypy
     editorconfig-checker
-    luajitPackages.lua-lsp
-    luajitPackages.luarocks-nix
-    (python311.withPackages(ps: with ps; [ pip pandas matplotlib numpy pypytools ]))
-    #(pkgs.callPackage /home/ted/prog/nixpkgs/pkgs/development/interpreters/zenroom/default.nix {})
-    docker
     solc
     nodePackages.typescript-language-server
-    mysql80  
     evcxr
  
     #TOOLS
     wget
     curl
     imagemagick
-    sqlite
     sent
     plan9port
     git
