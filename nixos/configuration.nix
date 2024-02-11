@@ -1,4 +1,4 @@
-{ pkgs, lib, inputs, ... }:
+{ config, pkgs, ... }:
 
 {
   imports =
@@ -49,14 +49,8 @@
       displayManager.sddm.enable = true;
       desktopManager.plasma5.enable = true;
       # Configure keymap in X11
-      xkb = {
-        layout = "se";
-        variant = "";
-      };
-    };
-    mysql = {
-      enable = true;
-      package = pkgs.mysql80;
+      layout = "se";
+      xkbVariant = "";
     };
     # Enable fwupd.
     fwupd.enable = true;
@@ -80,7 +74,7 @@
 
   # Set shell aliases for all users
   environment.shellAliases = {
-    ls = "eza";
+    ls = "exa";
     ll = "ls -l";
   };
 
@@ -106,14 +100,7 @@
   console.keyMap = "sv-latin1";
 
   nix = {
-    settings = { 
-      auto-optimise-store = true;
-      experimental-features = [ "nix-command" "flakes" ];
-    };
-    package = pkgs.nixFlakes;
-    extraOptions = ''
-      experimental-features = nix-command flakes
-    '';
+    settings.auto-optimise-store = true;
     # Enable automatic pruning of generations older than 30 days
     gc.automatic = true;
     gc.options = "--delete-older-than 30d";
@@ -121,8 +108,7 @@
  
   programs.fish.enable = true;
 
-  programs.hyprland.enable = true;
-  programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+  programs.spacefm.enable = true;
 
   security.rtkit.enable = true;
   # Enable sound with pipewire.
@@ -135,7 +121,7 @@
     cpu.intel.updateMicrocode = true;
     bluetooth.enable = true;
     steam-hardware.enable = true;
-    # Enable closed source firmware
+    # ENable closed source firmware
     enableRedistributableFirmware = true;
   };
   
@@ -150,7 +136,7 @@
       firefox
       ungoogled-chromium
       brave
-      vivaldi
+      tor 
 
       #VPN
       mullvad-vpn
@@ -158,6 +144,7 @@
       #CHATT
       tdesktop
       discord
+      teams
       slack
 
       #MUSIC
@@ -170,11 +157,10 @@
       gimp
       blender
       obs-studio
-      mpv
-      kdenlive
-      libreoffice-qt
       
       #ORG
+      evolution
+      spaceFM
       liferea
       claws-mail
       obsidian
@@ -194,33 +180,36 @@
   environment.systemPackages = with pkgs; [
     #TEXT EDITORS
     (vis.overrideAttrs (old: {patches = [./patches/vis/communicate.patch];}))
+    emacs
+    wily
     helix
     vscodium
 
     #FONTS
     mononoki
-    victor-mono
 
     #PROG
     python311
+    pypy3
     nodejs_20
     (lua.withPackages(ps: with ps; [ http ]))
     gcc
     rustup
-    rust-analyzer-unwrapped    
+    nil
+    lua-language-server
     python311Packages.python-lsp-server
-    python311Packages.pytest
     mypy
-    editorconfig-checker
-    solc
-    nodePackages.typescript-language-server
-    evcxr
-    lldb
+    luajitPackages.lua-lsp
+    luajitPackages.luarocks-nix
+    (python311.withPackages(ps: with ps; [ pip pandas matplotlib numpy pypytools ]))
+    #(pkgs.callPackage /home/ted/prog/nixpkgs/pkgs/development/interpreters/zenroom/default.nix {})
+    docker
  
     #TOOLS
     wget
     curl
     imagemagick
+    sqlite
     sent
     plan9port
     git
@@ -230,9 +219,7 @@
     unzip
     virtualenv
     gnumake
-    eza
-    lf
-    marksman
+    exa
 
     #TERM AND SHELL
     kitty
@@ -243,6 +230,7 @@
     drumgizmo
     zynaddsubfx
     carla
+    zrythm
     bespokesynth
     sonic-pi
     puredata
@@ -274,6 +262,7 @@
     #AUDIO
     pipewire
     qpwgraph
+    cadence
     jack2
     qjackctl
   ];
@@ -289,7 +278,6 @@
   nixpkgs.config.permittedInsecurePackages = [
     "teams-1.5.00.23861"
     "electron-24.8.6"
-    "electron-25.9.0"
   ];
 
   virtualisation.docker.enable = true;
@@ -309,4 +297,5 @@
 
   programs.steam.enable = true;
   system.stateVersion = "22.11"; 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }
