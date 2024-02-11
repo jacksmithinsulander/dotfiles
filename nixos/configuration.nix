@@ -49,8 +49,10 @@
       displayManager.sddm.enable = true;
       desktopManager.plasma5.enable = true;
       # Configure keymap in X11
-      layout = "se";
-      xkbVariant = "";
+      xkb = {
+        layout = "se";
+        variant = "";
+      };
     };
     mysql = {
       enable = true;
@@ -213,6 +215,7 @@
     solc
     nodePackages.typescript-language-server
     evcxr
+    lldb
  
     #TOOLS
     wget
@@ -221,7 +224,6 @@
     sent
     plan9port
     git
-    jujutsu
     neofetch
     htop
     zip
@@ -230,6 +232,7 @@
     gnumake
     eza
     lf
+    marksman
 
     #TERM AND SHELL
     kitty
