@@ -152,6 +152,7 @@
       brave
       vivaldi
       opera
+      microsoft-edge
 
       #VPN
       mullvad-vpn
@@ -169,7 +170,7 @@
 
       #CREATIVE
       gimp
-      blender
+      #blender
       obs-studio
       mpv
       kdenlive
@@ -179,11 +180,13 @@
       liferea
       claws-mail
       obsidian
+      tradingview
 
       #SINS
       lutris
       heroic
       vulkan-tools
+      airshipper
     ];
   };
 
@@ -191,6 +194,16 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
+  nixpkgs.overlays = [ (_: prev: {
+    libtins = prev.libtins.overrideAttrs (
+      o: {
+        patches = o.patches ++ [
+         ./patches/cpp/force-cpp-14.patch 
+         ]; 
+      }
+    );
+  })];
 
   environment.systemPackages = with pkgs; [
     #TEXT EDITORS
@@ -217,6 +230,9 @@
     nodePackages.typescript-language-server
     evcxr
     lldb
+    wolfram-engine
+    wolfram-notebook
+    mathematica
  
     #TOOLS
     wget
