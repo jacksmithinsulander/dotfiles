@@ -255,6 +255,7 @@
     #TERM AND SHELL
     kitty
     fish
+    wezterm
 
     #MUSIC MAKING
     ardour
