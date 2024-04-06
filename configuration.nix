@@ -54,10 +54,6 @@
         variant = "";
       };
     };
-    mysql = {
-      enable = true;
-      package = pkgs.mysql80;
-    };
     # Enable fwupd.
     fwupd.enable = true;
     pipewire = {
@@ -210,6 +206,7 @@
     (vis.overrideAttrs (old: {patches = [./patches/vis/communicate.patch];}))
     helix
     vscodium
+    vscode
 
     #FONTS
     mononoki
@@ -224,15 +221,16 @@
     rust-analyzer-unwrapped    
     python311Packages.python-lsp-server
     python311Packages.pytest
+    python311Packages.pip
     mypy
     editorconfig-checker
     solc
     nodePackages.typescript-language-server
     evcxr
     lldb
-    wolfram-engine
-    wolfram-notebook
-    mathematica
+    # wolfram-engine
+    # wolfram-notebook
+    # mathematica
  
     #TOOLS
     wget
@@ -251,6 +249,17 @@
     lf
     marksman
     zathura
+    figlet
+
+    # WAYLAND
+    waybar
+    swww
+    wofi
+    networkmanagerapplet
+    tofi
+    eww
+    figlet
+    rofi-wayland
 
     #TERM AND SHELL
     kitty
@@ -275,8 +284,8 @@
     boops
     distrho
     lsp-plugins
-    surge-XT
-    surge
+    #surge-XT
+    #surge
     ninjas2
     artyFX
     fmsynth
