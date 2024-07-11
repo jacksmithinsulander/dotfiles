@@ -44,9 +44,9 @@
   services = {
     # Enable the X11 windowing system.
     xserver.enable = true;
+    displayManager.sddm.enable = true;
     xserver = {
       # Enable the Plasma Desktop Environment.
-      displayManager.sddm.enable = true;
       desktopManager.plasma5.enable = true;
       # Configure keymap in X11
       xkb = {
@@ -116,9 +116,12 @@
   };
  
   programs.fish.enable = true;
+  programs.adb.enable = true;
 
-  programs.hyprland.enable = true;
-  programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+  #programs.hyprland.enable = true;
+  #programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+
+  #programs.schizofox.enable = true;
 
   security.rtkit.enable = true;
   # Enable sound with pipewire.
@@ -126,11 +129,11 @@
   
   hardware = { 
     pulseaudio.enable = false;
-    opengl.enable = true;
+    graphics.enable = true;
     nvidia.open = true;
     cpu.intel.updateMicrocode = true;
     bluetooth.enable = true;
-    steam-hardware.enable = true;
+    # steam-hardware.enable = true;
     # Enable closed source firmware
     enableRedistributableFirmware = true;
   };
@@ -139,7 +142,7 @@
   users.users.ted = {
     isNormalUser = true;
     description = "Theodore Kaczynski";
-    extraGroups = [ "networkmanager" "wheel" "audio" "docker"];
+    extraGroups = [ "networkmanager" "wheel" "audio" "docker" "kvm" "adbuser"];
     shell = pkgs.fish;
     packages = with pkgs; [
       #BROWSERS
@@ -173,16 +176,20 @@
       libreoffice-qt
       
       #ORG
-      liferea
-      claws-mail
-      obsidian
+      #obsidian
       tradingview
 
+      # ANDROID
+      #android-tools
+      #adb-sync
+      scrcpy      
+
+
       #SINS
-      lutris
-      heroic
-      vulkan-tools
-      airshipper
+      #lutris
+      #heroic
+      #vulkan-tools
+      #airshipper
     ];
   };
 
@@ -191,22 +198,25 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  nixpkgs.overlays = [ (_: prev: {
-    libtins = prev.libtins.overrideAttrs (
-      o: {
-        patches = o.patches ++ [
-         ./patches/cpp/force-cpp-14.patch 
-         ]; 
-      }
-    );
-  })];
+  # nixpkgs.overlays = [ (_: prev: {
+  #  libtins = prev.libtins.overrideAttrs (
+  #    o: {
+  #      patches = o.patches ++ [
+  #       ./patches/cpp/force-cpp-14.patch 
+  #       ]; 
+  #     }
+  #   );
+  # })];
+
+  nixpkgs.overlays = with inputs; [
+    mrtnvgr.overlay
+  ];
 
   environment.systemPackages = with pkgs; [
     #TEXT EDITORS
-    (vis.overrideAttrs (old: {patches = [./patches/vis/communicate.patch];}))
+    #(vis.overrideAttrs (old: {patches = [./patches/vis/communicate.patch];}))
     helix
     vscodium
-    vscode
 
     #FONTS
     mononoki
@@ -215,22 +225,24 @@
     #PROG
     python311
     nodejs_20
-    (lua.withPackages(ps: with ps; [ http ]))
+    # (lua.withPackages(ps: with ps; [ http ]))
     gcc
     rustup
     rust-analyzer-unwrapped    
-    python311Packages.python-lsp-server
-    python311Packages.pytest
-    python311Packages.pip
+    # python311Packages.python-lsp-server
+    # python311Packages.pytest
+    # python311Packages.pip
     mypy
     editorconfig-checker
     solc
     nodePackages.typescript-language-server
-    evcxr
-    lldb
+    # evcxr
+    # lldb
     # wolfram-engine
     # wolfram-notebook
     # mathematica
+    circom
+    flyctl
  
     #TOOLS
     wget
@@ -248,18 +260,21 @@
     eza
     lf
     marksman
+    markdown-oxide
     zathura
     figlet
+    groff
 
     # WAYLAND
     waybar
     swww
-    wofi
     networkmanagerapplet
-    tofi
-    eww
-    figlet
     rofi-wayland
+    slurp
+    grim
+    wl-clipboard
+    swaynotificationcenter
+    libnotify
 
     #TERM AND SHELL
     kitty
@@ -271,9 +286,9 @@
     drumgizmo
     zynaddsubfx
     carla
-    bespokesynth
-    sonic-pi
-    puredata
+    # bespokesynth
+    # sonic-pi
+    # puredata
     cardinal
     calf
     tunefish
@@ -287,8 +302,8 @@
     #surge-XT
     #surge
     ninjas2
-    artyFX
-    fmsynth
+    #artyFX
+    #fmsynth
     fverb
     metersLv2
     zam-plugins
@@ -297,7 +312,10 @@
     guitarix
     gxplugins-lv2
     geonkick
-    schismtracker
+    # schismtracker
+    # nam-trainer
+    # neuralnote
+    neural-amp-modeler-lv2
 
     #AUDIO
     pipewire
@@ -335,6 +353,6 @@
 #    VST3_PATH   = "$HOME/.vst3:$HOME/.nix-profile/lib/vst3:/run/current-system/sw/lib/vst3";
 #  };
 
-  programs.steam.enable = true;
+  #programs.steam.enable = true;
   system.stateVersion = "22.11"; 
 }

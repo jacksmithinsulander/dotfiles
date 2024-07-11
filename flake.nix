@@ -4,11 +4,14 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    # Temporary patch for xz trojan
-    # nixpkgs.url = "nixpkgs/nixos-23.11";
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     hyprland.url = "github:hyprwm/Hyprland";
+    mrtnvgr = {
+      url = "github:mrtnvgr/nurpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    schizofox.url = "github:schizofox/schizofox";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:

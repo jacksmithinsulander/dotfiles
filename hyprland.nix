@@ -1,5 +1,3 @@
-# home.nix
-
 { pkgs, lib, config, ... }:
 
   let
@@ -12,15 +10,15 @@
       systemctl --user import-environment PATH &
       systemctl --user restart xdg-desktop-portal.service &
 
-      sleep 2 
+      swaync &
+      waybar &
+
+      sleep 2 & 
   
       ${pkgs.swww}/bin/swww img ${./black.png} &
-      waybar
     '';
 in
 {
-  # wayland.windowManager.hyprland = {
-  #  enable = true;
   options = {
     hyprlandExtra = lib.mkOption {
       default = "";
@@ -37,12 +35,18 @@ in
       # enableNvidiaPatches = true;
 
       settings = {
+        input = {
+          kb_layout = "se";
+          kb_variant = "";
+          kb_model = "";
+        };
+
         bind = 
           [
-            "alt, return, exec, wofi --show drun"
-            "alt, space, exec, tofi-drun --drun-launch=true"
+            "alt, space, exec, rofi -show drun -show-icons"
             "alt, n, exec, wezterm"
-            
+
+            #PRESETS            
             # Work
             "alt, w, exec, slack & spotify & codium & wezterm & discord"
 
@@ -51,6 +55,9 @@ in
 
             # Programming
             "alt, p, exec, codium & wezterm"           
+
+            "alt, s, exec, grim -g $(slurp) $(xdg-user-dir PICTURES)/$(date +'%s_grim.png')"
+            "alt shift, s, exec, grim $(xdg-user-dir PICTURES)/$(date +'%s_grim.png')"
 
             "alt, q, killactive"
             "alt shift, f, togglefloating,"
